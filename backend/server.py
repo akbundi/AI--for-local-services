@@ -34,9 +34,10 @@ try:
         gmaps = googlemaps.Client(key=google_api_key)
     else:
         gmaps = None
-        logging.warning(\"Google Places API key not configured. Search functionality will be limited.\")\nexcept Exception as e:
+        logging.warning("Google Places API key not configured. Search functionality will be limited.")
+except Exception as e:
     gmaps = None
-    logging.error(f\"Failed to initialize Google Maps client: {e}\")
+    logging.error(f"Failed to initialize Google Maps client: {e}")
 
 # Create the main app without a prefix
 app = FastAPI(title="LocalProHelper API")
