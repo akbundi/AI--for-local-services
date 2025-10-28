@@ -27,8 +27,16 @@ db = client[os.environ['DB_NAME']]
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 security = HTTPBearer()
 
-# Google Places API client
-gmaps = googlemaps.Client(key=os.environ.get('GOOGLE_PLACES_API_KEY', ''))
+# Google Places API client (optional)
+try:
+    google_api_key = os.environ.get('GOOGLE_PLACES_API_KEY', '')
+    if google_api_key and google_api_key != 'YOUR_GOOGLE_API_KEY_HERE':
+        gmaps = googlemaps.Client(key=google_api_key)
+    else:
+        gmaps = None
+        logging.warning(\"Google Places API key not configured. Search functionality will be limited.\")\nexcept Exception as e:
+    gmaps = None
+    logging.error(f\"Failed to initialize Google Maps client: {e}\")
 
 # Create the main app without a prefix
 app = FastAPI(title="LocalProHelper API")
