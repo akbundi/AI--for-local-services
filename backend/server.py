@@ -216,6 +216,9 @@ SERVICE_TYPE_MAPPING = {
 
 @api_router.post("/services/search", response_model=SearchResponse)
 async def search_services(request: SearchRequest, user_id: str = Depends(get_current_user)):
+    if not gmaps:
+        raise HTTPException(status_code=503, detail="Google Places API not configured. Please add GOOGLE_PLACES_API_KEY to environment variables.")
+    
     try:
         # Geocode the location
         geocode_result = gmaps.geocode(request.location)
