@@ -311,18 +311,97 @@ REAL_PROVIDERS_DB = {
 async def search_without_api(location: str, service_type: str, budget: Optional[str] = None):
     """Search using real curated Indian business data"""
     
-    # Common Indian cities coordinates
+    # Common Indian cities coordinates - 7 cities per state
     indian_cities = {
+        # Rajasthan - 7 cities
+        "jaipur": {"lat": 26.9124, "lng": 75.7873, "state": "Rajasthan"},
+        "kota": {"lat": 25.2138, "lng": 75.8648, "state": "Rajasthan"},
+        "ajmer": {"lat": 26.4499, "lng": 74.6399, "state": "Rajasthan"},
+        "udaipur": {"lat": 24.5854, "lng": 73.7125, "state": "Rajasthan"},
+        "bikaner": {"lat": 28.0229, "lng": 73.3119, "state": "Rajasthan"},
+        "bhilwara": {"lat": 25.3467, "lng": 74.6406, "state": "Rajasthan"},
+        "bundi": {"lat": 25.4305, "lng": 75.6499, "state": "Rajasthan"},
+        
+        # Maharashtra - 7 cities
         "mumbai": {"lat": 19.0760, "lng": 72.8777, "state": "Maharashtra"},
+        "pune": {"lat": 18.5204, "lng": 73.8567, "state": "Maharashtra"},
+        "nagpur": {"lat": 21.1458, "lng": 79.0882, "state": "Maharashtra"},
+        "nashik": {"lat": 19.9975, "lng": 73.7898, "state": "Maharashtra"},
+        "aurangabad": {"lat": 19.8762, "lng": 75.3433, "state": "Maharashtra"},
+        "solapur": {"lat": 17.6599, "lng": 75.9064, "state": "Maharashtra"},
+        "kolhapur": {"lat": 16.7050, "lng": 74.2433, "state": "Maharashtra"},
+        
+        # Delhi & NCR
         "delhi": {"lat": 28.7041, "lng": 77.1025, "state": "Delhi"},
+        "gurgaon": {"lat": 28.4595, "lng": 77.0266, "state": "Haryana"},
+        "gurugram": {"lat": 28.4595, "lng": 77.0266, "state": "Haryana"},
+        "noida": {"lat": 28.5355, "lng": 77.3910, "state": "Uttar Pradesh"},
+        "faridabad": {"lat": 28.4089, "lng": 77.3178, "state": "Haryana"},
+        "ghaziabad": {"lat": 28.6692, "lng": 77.4538, "state": "Uttar Pradesh"},
+        
+        # Karnataka - 7 cities
         "bangalore": {"lat": 12.9716, "lng": 77.5946, "state": "Karnataka"},
         "bengaluru": {"lat": 12.9716, "lng": 77.5946, "state": "Karnataka"},
-        "hyderabad": {"lat": 17.3850, "lng": 78.4867, "state": "Telangana"},
+        "mysore": {"lat": 12.2958, "lng": 76.6394, "state": "Karnataka"},
+        "mysuru": {"lat": 12.2958, "lng": 76.6394, "state": "Karnataka"},
+        "hubli": {"lat": 15.3647, "lng": 75.1240, "state": "Karnataka"},
+        "mangalore": {"lat": 12.9141, "lng": 74.8560, "state": "Karnataka"},
+        "belgaum": {"lat": 15.8497, "lng": 74.4977, "state": "Karnataka"},
+        "davangere": {"lat": 14.4644, "lng": 75.9218, "state": "Karnataka"},
+        
+        # Tamil Nadu - 7 cities
         "chennai": {"lat": 13.0827, "lng": 80.2707, "state": "Tamil Nadu"},
+        "coimbatore": {"lat": 11.0168, "lng": 76.9558, "state": "Tamil Nadu"},
+        "madurai": {"lat": 9.9252, "lng": 78.1198, "state": "Tamil Nadu"},
+        "tiruchirappalli": {"lat": 10.7905, "lng": 78.7047, "state": "Tamil Nadu"},
+        "salem": {"lat": 11.6643, "lng": 78.1460, "state": "Tamil Nadu"},
+        "tirunelveli": {"lat": 8.7139, "lng": 77.7567, "state": "Tamil Nadu"},
+        "vellore": {"lat": 12.9165, "lng": 79.1325, "state": "Tamil Nadu"},
+        
+        # Telangana & Andhra Pradesh - 7 cities
+        "hyderabad": {"lat": 17.3850, "lng": 78.4867, "state": "Telangana"},
+        "warangal": {"lat": 17.9689, "lng": 79.5941, "state": "Telangana"},
+        "vijayawada": {"lat": 16.5062, "lng": 80.6480, "state": "Andhra Pradesh"},
+        "visakhapatnam": {"lat": 17.6868, "lng": 83.2185, "state": "Andhra Pradesh"},
+        "guntur": {"lat": 16.3067, "lng": 80.4365, "state": "Andhra Pradesh"},
+        "tirupati": {"lat": 13.6288, "lng": 79.4192, "state": "Andhra Pradesh"},
+        "nellore": {"lat": 14.4426, "lng": 79.9865, "state": "Andhra Pradesh"},
+        
+        # West Bengal - 7 cities
         "kolkata": {"lat": 22.5726, "lng": 88.3639, "state": "West Bengal"},
-        "pune": {"lat": 18.5204, "lng": 73.8567, "state": "Maharashtra"},
+        "howrah": {"lat": 22.5958, "lng": 88.2636, "state": "West Bengal"},
+        "durgapur": {"lat": 23.5204, "lng": 87.3119, "state": "West Bengal"},
+        "siliguri": {"lat": 26.7271, "lng": 88.3953, "state": "West Bengal"},
+        "asansol": {"lat": 23.6739, "lng": 86.9524, "state": "West Bengal"},
+        "bardhaman": {"lat": 23.2324, "lng": 87.8615, "state": "West Bengal"},
+        "kharagpur": {"lat": 22.3460, "lng": 87.2320, "state": "West Bengal"},
+        
+        # Gujarat - 7 cities
         "ahmedabad": {"lat": 23.0225, "lng": 72.5714, "state": "Gujarat"},
-        "jaipur": {"lat": 26.9124, "lng": 75.7873, "state": "Rajasthan"}
+        "surat": {"lat": 21.1702, "lng": 72.8311, "state": "Gujarat"},
+        "vadodara": {"lat": 22.3072, "lng": 73.1812, "state": "Gujarat"},
+        "rajkot": {"lat": 22.3039, "lng": 70.8022, "state": "Gujarat"},
+        "bhavnagar": {"lat": 21.7645, "lng": 72.1519, "state": "Gujarat"},
+        "jamnagar": {"lat": 22.4707, "lng": 70.0577, "state": "Gujarat"},
+        "gandhinagar": {"lat": 23.2156, "lng": 72.6369, "state": "Gujarat"},
+        
+        # Uttar Pradesh - 7 cities
+        "lucknow": {"lat": 26.8467, "lng": 80.9462, "state": "Uttar Pradesh"},
+        "kanpur": {"lat": 26.4499, "lng": 80.3319, "state": "Uttar Pradesh"},
+        "agra": {"lat": 27.1767, "lng": 78.0081, "state": "Uttar Pradesh"},
+        "varanasi": {"lat": 25.3176, "lng": 82.9739, "state": "Uttar Pradesh"},
+        "meerut": {"lat": 28.9845, "lng": 77.7064, "state": "Uttar Pradesh"},
+        "allahabad": {"lat": 25.4358, "lng": 81.8463, "state": "Uttar Pradesh"},
+        "prayagraj": {"lat": 25.4358, "lng": 81.8463, "state": "Uttar Pradesh"},
+        
+        # Madhya Pradesh - 7 cities
+        "indore": {"lat": 22.7196, "lng": 75.8577, "state": "Madhya Pradesh"},
+        "bhopal": {"lat": 23.2599, "lng": 77.4126, "state": "Madhya Pradesh"},
+        "jabalpur": {"lat": 23.1815, "lng": 79.9864, "state": "Madhya Pradesh"},
+        "gwalior": {"lat": 26.2183, "lng": 78.1828, "state": "Madhya Pradesh"},
+        "ujjain": {"lat": 23.1765, "lng": 75.7885, "state": "Madhya Pradesh"},
+        "sagar": {"lat": 23.8388, "lng": 78.7378, "state": "Madhya Pradesh"},
+        "dewas": {"lat": 22.9676, "lng": 76.0534, "state": "Madhya Pradesh"},
     }
     
     # Find matching city
