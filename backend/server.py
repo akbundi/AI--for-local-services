@@ -305,6 +305,162 @@ REAL_PROVIDERS_DB = {
         "repair": [
             {"name": "ServiceMax Bangalore", "area": "BTM Layout", "phone": "+918026789012", "rating": 4.3},
         ]
+    },
+    
+    # MORE RAJASTHAN CITIES
+    "kota": {
+        "tutor": [
+            {"name": "Allen Kota", "area": "Commerce College Road", "phone": "+917442500400", "rating": 4.8},
+            {"name": "Resonance Kota", "area": "Indra Vihar", "phone": "+917442600600", "rating": 4.8},
+            {"name": "Motion IIT-JEE Kota", "area": "Talwandi", "phone": "+917442700700", "rating": 4.7},
+            {"name": "Vibrant Academy", "area": "Dadabari", "phone": "+917442324455", "rating": 4.7},
+        ],
+        "plumber": [
+            {"name": "Kota Plumbing Services", "area": "Vigyan Nagar", "phone": "+919414234567", "rating": 4.3},
+            {"name": "Quick Fix Plumbers Kota", "area": "Dadabari", "phone": "+917442123456", "rating": 4.2},
+        ],
+        "gym": [
+            {"name": "Gold's Gym Kota", "area": "Talwandi", "phone": "+917442890123", "rating": 4.5},
+            {"name": "Fitness Hub Kota", "area": "Vigyan Nagar", "phone": "+919829345678", "rating": 4.4},
+        ],
+        "repair": [
+            {"name": "Kota Electronics Repair", "area": "Dadabari", "phone": "+917442567890", "rating": 4.3},
+        ]
+    },
+    "ajmer": {
+        "tutor": [
+            {"name": "Career Point Ajmer", "area": "Vaishali Nagar", "phone": "+911452663333", "rating": 4.5},
+            {"name": "Brilliant Academy Ajmer", "area": "Pushkar Road", "phone": "+919414123456", "rating": 4.4},
+        ],
+        "plumber": [
+            {"name": "Ajmer Plumbing Works", "area": "Civil Lines", "phone": "+911452234567", "rating": 4.2},
+        ],
+        "gym": [
+            {"name": "Fitness Zone Ajmer", "area": "Vaishali Nagar", "phone": "+919829456789", "rating": 4.3},
+        ],
+        "repair": [
+            {"name": "Home Appliance Repair Ajmer", "area": "Pushkar Road", "phone": "+911452345678", "rating": 4.2},
+        ]
+    },
+    "udaipur": {
+        "tutor": [
+            {"name": "Career Plus Udaipur", "area": "Hiran Magri", "phone": "+912942456789", "rating": 4.6},
+            {"name": "Lakecity Academy", "area": "Sector 14", "phone": "+919414567890", "rating": 4.5},
+        ],
+        "plumber": [
+            {"name": "Udaipur Plumbing Solutions", "area": "Fateh Sagar", "phone": "+912942234567", "rating": 4.3},
+        ],
+        "gym": [
+            {"name": "Gold's Gym Udaipur", "area": "Celebration Mall", "phone": "+912942890123", "rating": 4.6},
+            {"name": "Fitness First Udaipur", "area": "Hiran Magri", "phone": "+919829678901", "rating": 4.4},
+        ],
+        "repair": [
+            {"name": "Udaipur Electronics Service", "area": "Sector 14", "phone": "+912942345678", "rating": 4.2},
+        ]
+    },
+    "bikaner": {
+        "tutor": [
+            {"name": "Allen Career Institute Bikaner", "area": "Rani Bazar", "phone": "+911512523456", "rating": 4.5},
+            {"name": "Unique Academy Bikaner", "area": "KEM Road", "phone": "+919414234567", "rating": 4.4},
+        ],
+        "plumber": [
+            {"name": "Bikaner Plumbing Services", "area": "Jail Road", "phone": "+911512345678", "rating": 4.2},
+        ],
+        "gym": [
+            {"name": "Powerhouse Gym Bikaner", "area": "Rani Bazar", "phone": "+919829567890", "rating": 4.3},
+        ],
+        "repair": [
+            {"name": "Quick Repair Bikaner", "area": "KEM Road", "phone": "+911512456789", "rating": 4.1},
+        ]
+    },
+    "bhilwara": {
+        "tutor": [
+            {"name": "Career Point Bhilwara", "area": "Gandhi Nagar", "phone": "+911482234567", "rating": 4.4},
+        ],
+        "plumber": [
+            {"name": "Bhilwara Plumbing Works", "area": "Azad Nagar", "phone": "+911482345678", "rating": 4.1},
+        ],
+        "gym": [
+            {"name": "Fitness Center Bhilwara", "area": "Gandhi Nagar", "phone": "+919829789012", "rating": 4.2},
+        ],
+        "repair": [
+            {"name": "Home Care Bhilwara", "area": "Azad Nagar", "phone": "+911482456789", "rating": 4.0},
+        ]
+    },
+    "bundi": {
+        "tutor": [
+            {"name": "Bundi Coaching Classes", "area": "Sadar Bazar", "phone": "+917472234567", "rating": 4.3},
+        ],
+        "plumber": [
+            {"name": "Local Plumbers Bundi", "area": "Civil Lines", "phone": "+917472345678", "rating": 4.0},
+        ],
+        "gym": [
+            {"name": "Fitness Point Bundi", "area": "Sadar Bazar", "phone": "+919829890123", "rating": 4.1},
+        ],
+        "repair": [
+            {"name": "Electronics Repair Bundi", "area": "Civil Lines", "phone": "+917472456789", "rating": 3.9},
+        ]
+    },
+    
+    # MORE CITIES FROM OTHER STATES
+    "kota": {
+        "tutor": [
+            {"name": "Allen Kota", "area": "Commerce College Road", "phone": "+917442500400", "rating": 4.8},
+            {"name": "Resonance Kota", "area": "Indra Vihar", "phone": "+917442600600", "rating": 4.8},
+        ],
+        "plumber": [
+            {"name": "Kota Plumbing Services", "area": "Vigyan Nagar", "phone": "+919414234567", "rating": 4.3},
+        ],
+        "gym": [
+            {"name": "Gold's Gym Kota", "area": "Talwandi", "phone": "+917442890123", "rating": 4.5},
+        ],
+        "repair": [
+            {"name": "Kota Electronics Repair", "area": "Dadabari", "phone": "+917442567890", "rating": 4.3},
+        ]
+    },
+    "indore": {
+        "tutor": [
+            {"name": "Resonance Indore", "area": "Vijay Nagar", "phone": "+917312345678", "rating": 4.7},
+            {"name": "Career Launcher Indore", "area": "MG Road", "phone": "+919425123456", "rating": 4.6},
+        ],
+        "plumber": [
+            {"name": "Indore Plumbing Solutions", "area": "Vijay Nagar", "phone": "+917314567890", "rating": 4.4},
+        ],
+        "gym": [
+            {"name": "Gold's Gym Indore", "area": "Treasure Island", "phone": "+917312890123", "rating": 4.6},
+        ],
+        "repair": [
+            {"name": "Service Centre Indore", "area": "MG Road", "phone": "+917313456789", "rating": 4.3},
+        ]
+    },
+    "lucknow": {
+        "tutor": [
+            {"name": "Aakash Institute Lucknow", "area": "Gomti Nagar", "phone": "+915222334455", "rating": 4.6},
+            {"name": "Allen Career Institute Lucknow", "area": "Hazratganj", "phone": "+915224567890", "rating": 4.7},
+        ],
+        "plumber": [
+            {"name": "Lucknow Plumbing Services", "area": "Gomti Nagar", "phone": "+915223456789", "rating": 4.3},
+        ],
+        "gym": [
+            {"name": "Gold's Gym Lucknow", "area": "Phoenix Mall", "phone": "+915222890123", "rating": 4.5},
+        ],
+        "repair": [
+            {"name": "Electronics Repair Lucknow", "area": "Hazratganj", "phone": "+915224678901", "rating": 4.2},
+        ]
+    },
+    "surat": {
+        "tutor": [
+            {"name": "Takshila IIT Surat", "area": "Athwa", "phone": "+912612345678", "rating": 4.6},
+        ],
+        "plumber": [
+            {"name": "Surat Plumbing Works", "area": "Varachha", "phone": "+912613456789", "rating": 4.3},
+        ],
+        "gym": [
+            {"name": "Gold's Gym Surat", "area": "VR Mall", "phone": "+912612890123", "rating": 4.5},
+        ],
+        "repair": [
+            {"name": "Quick Fix Surat", "area": "Athwa", "phone": "+912614567890", "rating": 4.2},
+        ]
     }
 }
 
