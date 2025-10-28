@@ -14,6 +14,10 @@ from passlib.context import CryptContext
 import jwt
 import googlemaps
 from emergentintegrations.llm.chat import LlmChat, UserMessage
+import requests
+from bs4 import BeautifulSoup
+import re
+import random
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
