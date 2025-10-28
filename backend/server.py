@@ -221,6 +221,7 @@ SERVICE_TYPE_MAPPING = {
 
 # Real curated data for Indian cities - verified businesses
 REAL_PROVIDERS_DB = {
+    # RAJASTHAN CITIES
     "jaipur": {
         "tutor": [
             {"name": "Sai ExcelWays - An Excel & Tally Academy", "area": "Vidhyadhar Nagar", "phone": "+919414224448", "alt_phone": "0141-2339144", "rating": 4.5},
